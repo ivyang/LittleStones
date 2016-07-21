@@ -1,0 +1,26 @@
+Remove option from dropdown. 
+It won't work if the option is selected and use remove() from jQuery in IE like below: 
+$("#cws_jobsearch__proximity option)[0].remove();
+//Chrome and Firefox is working fine. 
+It is working if the option is selected by value attribute like the code below: 
+<body>
+  <div>within</div>
+  <div>
+    <select id="distance" name="radius" title="Radius" >
+    <option value="1" >1 Miles</option>
+    <option value="5" >5 Miles</option>
+    <option value="10" >10 Miles</option>
+    <option value="15" >15 Miles</option>
+    <option value="20" >20 Miles</option>
+    <option value="25" selected>25 Miles</option>
+    <option value="50" >50 Miles</option>
+    <option value="100" >100 Miles</option>
+    <option value="200" >200 Miles</option>
+    </select>
+ </div>
+ <script>
+    $(document).ready(function() {
+        $("#distance option[value='1']").remove();
+    });
+ </script>
+</body>
